@@ -1,0 +1,10 @@
+{% assign image_path = '/images/projects/' | append: include.name | append: '.png' %}
+{% assign project_image = site.static_files | where: 'path', image_path | first %}
+{% if project_image %}
+<div class="paper-box-image">
+  <div class="paper-thumbnail">
+    {% if include.badge %}<div class="badge">{{ include.badge | escape }}</div>{% endif %}
+      <img src="{{ image_path | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+  </div>
+</div>
+{% endif %}

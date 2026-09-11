@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 160 180" role="img" aria-labelledby="title desc">
+  <title id="title">盘腿坐着的卡通男孩</title>
+  <desc id="desc">棕色短发、粉色脸颊、白色上衣和蓝色裤子的可爱人物，透明背景。</desc>
+  <g stroke="#151515" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Legs and shoes -->
+    <path fill="#757bc1" d="M58 139c-13 1-19 9-15 17 2 5 9 5 18 4h37c10 1 16-2 16-8 0-8-10-14-19-14z"/>
+    <!-- Torso and arms -->
+    <path fill="#ffd1ad" d="M61 106c-6 6-10 16-14 28-2 7 1 13 8 16l13-5 1-32z"/>
+    <path fill="#ffd1ad" d="M96 106c7 7 11 17 14 28 3 8-1 13-8 16l-13-5-2-32z"/>
+    <path fill="#faf9f6" d="M63 108l-5 24 7 6-3 14h35l-4-14 7-6-6-24z"/>
+    <path fill="#ffd1ad" d="M68 106l1 11c5 7 15 7 20 0l2-11z"/>
+    <path fill="none" d="M64 111c1 10 6 16 15 16s15-6 16-16"/>
+    <!-- Feet and hands -->
+    <path fill="#ffd1ad" d="M60 144c-9-1-13 2-12 8 1 7 12 8 20 7l12-3-3-8z"/>
+    <path fill="#ffd1ad" d="M98 144c9-1 13 2 12 8-1 7-12 8-20 7l-12-3 3-8z"/>
+    <path fill="#ffd1ad" d="M61 132c-2 7 0 10 7 12 8 2 13 6 12 11l-1 4H65"/>
+    <path fill="#ffd1ad" d="M98 132c2 7 0 10-7 12l-7 3"/>
+    <!-- Ears -->
+    <path fill="#ffd1ad" d="M43 62c-12-4-17 5-13 14 2 6 7 8 14 5z"/>
+    <path fill="#ffd1ad" d="M115 62c12-4 17 5 13 14-2 6-7 8-14 5z"/>
+    <!-- Face -->
+    <path fill="#ffdab9" d="M42 48c9-18 61-22 74 2l3 24c-2 24-18 42-39 42-23 0-40-19-41-42z"/>
+    <!-- Hair silhouette -->
+    <path fill="#bf7862" d="M34 64c-4-9-5-22 0-30 3-5 7-7 12-6C53 13 68 12 84 14c22 2 39 8 43 18 2 5 1 10-1 14l6 2-4 18-8-1-3-13c-14 4-31 2-45-2-8-2-14-5-19-9-6-1-10 15-19 23z"/>
+    <path fill="none" stroke="#9c5e4d" stroke-width="3" d="M46 29c-3 7-2 11 0 15"/>
+    <!-- Features -->
+    <g fill="none" stroke-width="4">
+      <path d="M58 63q4 3 8 0"/>
+      <path d="M94 63q4 3 8 0"/>
+      <path d="M75 72q5 5 10 0"/>
+    </g>
+    <g fill="#ffb4bd" stroke="none">
+      <ellipse cx="58" cy="75" rx="8" ry="6"/>
+      <ellipse cx="102" cy="75" rx="8" ry="6"/>
+    </g>
+  </g>
+</svg>

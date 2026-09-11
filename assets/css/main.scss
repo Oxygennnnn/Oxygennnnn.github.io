@@ -40,51 +40,55 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+/* Original AcadHomepage card structure, with uncropped architecture thumbnails. */
 .paper-box {
     display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-bottom: 1px #efefef solid;
-    padding: 2em 0 2em 0;
-    
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.4em;
+    border-bottom: 1px solid #efefef;
+    padding: 1.6em 0;
 
-    .paper-box-image{
-        justify-content: center;
-        display: flex;
+    .paper-box-image {
         width: 100%;
-        order: 2;
-        img {
-            max-width: 400px;
-            box-shadow: 3px 3px 6px #888;
-            object-fit: cover;
-        }
+        max-width: 340px;
+        flex: 0 0 auto;
     }
-    
-    .paper-box-text{
-        max-width: 100%;
-        order: 1;
+    .paper-thumbnail {
+        position: relative;
+        background: #fff;
+        padding: 2em .6em .6em;
+        box-shadow: 2px 3px 8px rgba(0, 0, 0, .18);
     }
-    
+    .paper-thumbnail img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        margin: 0;
+    }
+    .badge {
+        position: absolute;
+        top: .5em;
+        left: -.5em;
+        margin: 0;
+        padding: .15em .7em;
+        background: #00369f;
+        color: #fff;
+        font-size: .8em;
+    }
+    .paper-box-text { flex: 1; min-width: 0; width: 100%; }
+    .paper-box-text h2 { margin: 0 0 .6em; font-size: 1.1em; }
+    .paper-box-text p, .paper-box-text ul { margin-bottom: .65em; }
+    .paper-box-text > :last-child { margin-bottom: 0; }
+    .paper-details summary { cursor: pointer; color: #224b8d; font-weight: 600; }
+    .paper-details[open] summary { margin-bottom: .65em; }
+
     @include breakpoint($medium) {
-        .paper-box-image{
-            justify-content: left;
-            min-width: 200px;
-            max-width: 40%;
-            order: 1;
-        }
-        
-        .paper-box-text{
-            justify-content: left;
-            padding-left: 2em;
-            max-width: 60%;
-            order: 2;
-        }
-
+        flex-direction: row;
+        .paper-box-image { width: 32%; max-width: 300px; }
     }
-
-
 }
 
 $scroll_offset : 2em;
@@ -97,13 +101,16 @@ h1:before, .anchor:before {
     margin-top: -$scroll_offset;
 }
 
-.badge {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: absolute;
-    margin-top: .5em;
-    margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
-    font-size: .8em;
+/* Personal homepage additions */
+.profile-monogram { width: 150px; height: 150px; border-radius: 50%; background: #edf2f8; color: #224b8d; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
+.author__avatar img { object-fit: cover; aspect-ratio: 1; }
+.page__content h1 { scroll-margin-top: 4rem; }
+.page__content h2 { margin-top: 1.6em; }
+.page__content { overflow-wrap: anywhere; }
+.site-credit { clear: both; max-width: 1280px; margin: 2rem auto 0; padding: 1rem; border-top: 1px solid #eee; font-size: .8em; }
+@media (max-width: 924px) {
+  .profile-monogram { width: 75px; height: 75px; font-size: 1.8rem; }
+  .profile_box { flex-wrap: wrap; gap: .4rem; }
+  .author__content { flex: 1; min-width: 140px; }
+  .author__urls_sm { font-size: 1.35em; }
 }

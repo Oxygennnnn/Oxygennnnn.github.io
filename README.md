@@ -1,72 +1,59 @@
+# Haoyang Li — Personal Homepage
 
-<h1 align="center">
-AcadHomepage
-</h1>
+基于 AcadHomepage 的英文个人主页。线上目标：https://Oxygennnnn.github.io 。首页内容来自本人简历；原始 PDF 不随网站发布。
 
-<div align="center">
+## 日常修改
 
-[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [中文文档](./docs/README-zh.md) 
-</div>
+- 首页文字、教育、研究、实习、荣誉、技能：`_pages/about.md`。
+- 姓名、邮箱、GitHub、站点标题与描述：`_config.yml`；修改后重启预览。
+- 菜单及锚点：`_data/navigation.yml`，锚点应与首页标题后的 `{#...}` 一致。
+- 头像：`images/profile.jpg`；没有文件时显示 HL。
+- 项目图：`images/projects/{recapa,gba-net,federated-face-recognition,evoagentx-memory}.png`。文件不存在时不输出图片。
+- 分享图：可选 `images/social-preview.png`，1200×630 PNG。
+- 图标：`images/favicon.svg`。
 
-<p align="center">A Modern and Responsive Academic Personal Homepage</p>
+## 本地预览
 
-<p align="center">
-    <br>
-    <img src="docs/screenshot.png" width="100%"/>
-    <br>
-</p>
+```bash
+cd /Users/oxygen/Desktop/homepage/acad-homepage.github.io
+bash run_server.sh
+```
 
-Some examples:
-- [Demo Page](https://rayeren.github.io/acad-homepage.github.io/)
-- [Personal Homepage of the author](https://rayeren.github.io/)
+浏览 http://127.0.0.1:4000 。按 Ctrl+C 停止。配置文件修改后需要重启。
 
-## Key Features
-- **Automatically update google scholar citations**: using the google scholar crawler and github action, this REPO can update the author citations and publication citations automatically.
-- **Support Google analytics**: you can trace the traffics of your homepage by easy configuration.
-- **Responsive**: this homepage automatically adjust for different screen sizes and viewports.
-- **Beautiful and Simple Design**: this homepage is beautiful and simple, which is very suitable for academic personal homepage.
-- **SEO**: search Engine Optimization (SEO) helps search engines find the information you publish on your homepage easily, then rank it against similar websites.
+本次使用 macOS 系统 Ruby 2.6.10，Bundler 2.2.19，以及锁定的 github-pages 215 / Jekyll 3.9.0。Gemfile.lock 仅增加当前 macOS 平台。依赖放在被 Git 忽略的 vendor/bundle，Bundler 放在 /private/tmp/homepage-gems。临时目录可能在重启或系统清理后消失，可重新安装隔离 Bundler：
 
-## Quick Start
+```bash
+gem install bundler -v 2.2.19 --install-dir /private/tmp/homepage-gems --no-document
+export GEM_HOME=/private/tmp/homepage-gems
+export GEM_PATH=/private/tmp/homepage-gems
+export PATH="/private/tmp/homepage-gems/bin:$PATH"
+bundle config set --local path vendor/bundle
+bundle install
+bundle exec jekyll build --safe
+bash run_server.sh
+```
 
-1. Fork this REPO and rename to `USERNAME.github.io`, where `USERNAME` is your github USERNAME.
-1. Configure the google scholar citation crawler:
-    1. Find your google scholar ID in the url of your google scholar page (e.g., https://scholar.google.com/citations?user=SCHOLAR_ID), where `SCHOLAR_ID` is your google scholar ID.
-    1. Set GOOGLE_SCHOLAR_ID variable to your google scholar ID in `Settings -> Secrets -> Actions -> New repository secret` of the REPO website with `name=GOOGLE_SCHOLAR_ID` and `value=SCHOLAR_ID`.
-    1. Click the `Action` of the REPO website and enable the workflows by clicking *"I understand my workflows, go ahead and enable them"*. This github action will generate google scholar citation stats data `gs_data.json` in `google-scholar-stats` branch of your REPO. When you update your main branch, this action will be triggered. This action will also be trigger 08:00 UTC everyday.
-1. Generate favicon using [favicon-generator](https://redketchup.io/favicon-generator) and download all generated files to `REPO/images`.
-1. Modify the configuration of your homepage `_config.yml`:
-    1. `title`: the title of your homepage
-    1. `description`: the description of your homepage
-    1. `repository`: USER_NAME/REPO_NAME  
-    1. `google_analytics_id` (optional): google analytics ID
-    1. SEO Related keys (optional): get these keys from search engine consoles (e.g. Google, Bing and Baidu) and paste here.
-    1. `author`: the author information of this homepage, including some other websites, emails, city and univeristy.
-    1. More configuration details are described in the comments.
-1. Add your homepage content in `_pages/about.md`.
-    1. You can use html+markdown syntax just same as jekyll.
-    1. You can use a `<span>` tag with class `show_paper_citations` and attribute `data` to display the citations of your paper. Set the data to the google scholar paper ID. For
-        ```html
-        <span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span>
-        ``` 
-        > Q: How to get the google scholar paper ID?   
-        > A: Enter your google scholar homepage and click the paper name. Then you can see the paper ID from `citation_for_view=XXXX`, where `XXXX` is the required paper ID.
-1. Your page will be published at `https://USERNAME.github.io`.
+不使用 sudo，不执行整体 bundle update。更换 Ruby 后需重新安装对应依赖。
 
-## Debug Locally
+## 文件如何组成网页
 
-1. Clone your REPO to local using `git clone`.
-1. Install Jekyll building environment, including `Ruby`, `RubyGems`, `GCC` and `Make` following [the installation guide](https://jekyllrb.com/docs/installation/#requirements).
-1. Run `bash run_server.sh` to start Jekyll livereload server.
-1. Open http://127.0.0.1:4000 in your browser.
-1. If you change the source code of the website, the livereload server will automatically refresh.
-1. When you finish the modification of your homepage, `commit` your changings and `push` to your remote REPO using `git` command.
+`_config.yml` 提供全局 YAML 数据；`_data/navigation.yml` 提供导航。`_pages/about.md` 的 YAML front matter 设置根路径，Markdown 正文经 Kramdown 转换，Liquid 变量和 include 组成内容；`_layouts/default.html` 调用 `_includes/` 中的头部、导航、侧栏、脚本和 SEO，输出 HTML。`assets/css/main.scss` 汇总 `_sass/` 样式并编译 CSS；`images/` 和 `assets/` 的静态文件被复制到 `_site/`。
 
-# Acknowledges
+`Gemfile` 声明依赖，`Gemfile.lock` 锁定版本，`run_server.sh` 负责预览。`_site/` 是产物，不提交。Jekyll 的 exclude 防止内容出现在网站；`.gitignore` 防止未跟踪文件被提交，两者用途不同。
 
-- AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.
-- AcadHomepage is influenced by the github repo [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes), which is distributed under the MIT License.
-- AcadHomepage is influenced by the github repo [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io), which is distributed under the MIT License.
+## GitHub Pages
+
+本仓库使用 Settings → Pages → Deploy from a branch → main → / (root)。无需添加自定义 Pages 部署工作流或 .nojekyll。
+
+Scholar 工作流仅保留手动入口且 job 永远跳过，不定时运行、不写分支；前端引用统计也已禁用。`google_scholar_crawler/` 保留为未使用的模板功能，不进入网站。未设置 Analytics。
+
+## Template attribution
+
+Based on [AcadHomepage](https://github.com/RayeRen/acad-homepage.github.io) by Yi Ren. The original MIT license is retained in LICENSE.
+
+- Font Awesome: SIL OFL 1.1 and MIT License.
+- Influenced by [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes), MIT License.
+- Influenced by [Academic Pages](https://github.com/academicpages/academicpages.github.io), MIT License.
+
+The original template documentation is retained in docs/ and excluded from the generated website.

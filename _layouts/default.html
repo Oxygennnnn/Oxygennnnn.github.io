@@ -1,9 +1,8 @@
 ---
-layout: compress
 ---
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="{{ site.lang | default: 'en' }}" class="no-js">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
@@ -27,6 +26,7 @@ layout: compress
       </article>
     </div>
 
+    <footer class="site-credit">Built with <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> and Jekyll.</footer>
     {% include scripts.html %}
 
   </body>
