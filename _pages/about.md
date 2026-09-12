@@ -20,7 +20,7 @@ September 2026 – July 2028 (expected)
 Coursework listed in my academic training: Foundations of Artificial Intelligence, Optimization in Artificial Intelligence, Statistics in Artificial Intelligence, and Deep Learning.
 
 **South China Normal University** — Undergraduate study in Software Engineering<br>
-September 2022 – July 2026 · GPA: **3.97/5.0**
+September 2022 – July 2026 · GPA: **3.97/5.0 (90/100)**
 
 Selected coursework: Advanced Mathematics (100), Discrete Mathematics (96), Artificial Intelligence Foundation (99), and Data Mining and Visualization (99).
 
